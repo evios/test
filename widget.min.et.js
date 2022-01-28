@@ -1,7 +1,7 @@
 var NDRSL = {cssLoaded: !1, targetElements: 0, totalElements: 0, containsCarousel: !1, containsWOL: !1};
 NDRSL.isLocal = !(!window.location.href.includes("file://") && !window.location.href.includes("localhost")), NDRSL.createWidget = function (e, t) {
     console.log("Creating widget: " + t);
-    var i = NDRSL.isLocal ? "http://localhost:3000/render/" + t + "?ref=" + encodeURIComponent(window.location.pathname) : "https://raw.githubusercontent.com/evios/test/main/endorsals.html" + "?ref=" + encodeURIComponent(window.location.pathname);
+    var i = NDRSL.isLocal ? "http://localhost:3000/render/" + t + "?ref=" + encodeURIComponent(window.location.pathname) : "https://evios.github.io/test/endorsals.html" + "?ref=" + encodeURIComponent(window.location.pathname);
     if (i += e.getAttribute("ndrsl-demo") ? "&demo=true" : "", e.getAttribute("data-product-id")) {
         let t = e.attributes;
         for (let e = 0; e < t.length; e++) {
