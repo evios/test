@@ -116,12 +116,12 @@ NDRSL.isLocal = !(!window.location.href.includes("file://") && !window.location.
         (t && t.slideNum || 0 == t.slideNum) && t.NDRSLsetHeight(t.slideNum)
     }
 }, NDRSL.go = function (e) {
-    var t = NDRSL.isLocal ? "http://localhost:3000/check/fomo/" + e + "?ref=" + encodeURIComponent(window.location.href) : "https://api.endorsal.io/check/fomo/" + e + "?ref=" + encodeURIComponent(window.location.href);
+    var t = NDRSL.isLocal ? "http://localhost:3000/check/fomo/" + e + "?ref=" + encodeURIComponent(window.location.href) : "https://api.et.io/check/fomo/" + e + "?ref=" + encodeURIComponent(window.location.href);
     fetch(t, {headers: {"Access-Control-Allow-Origin": "*"}}).then(function (e) {
         e && e.ok && e.json().then(e => {
             if (console.log(e), e.success) {
                 let t = document.createElement("script");
-                t.setAttribute("type", "text/javascript"), t.setAttribute("src", NDRSL.isLocal ? "widgets/fomo.min.js" : "https://cdn.endorsal.io/widgets/fomo.min.js"), t.setAttribute("async", !0), t.setAttribute("defer", !0), t.onload = function () {
+                t.setAttribute("type", "text/javascript"), t.setAttribute("src", NDRSL.isLocal ? "widgets/fomo.min.js" : "https://cdn.et.io/widgets/fomo.min.js"), t.setAttribute("async", !0), t.setAttribute("defer", !0), t.onload = function () {
                     FOMO.init(e.data)
                 }, document.getElementsByTagName("head")[0].appendChild(t)
             }
